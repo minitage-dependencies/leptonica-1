@@ -1,0 +1,14 @@
+diff -Nur leptonica-1.68/src/pngio.c leptonica-1.68.new/src/pngio.c
+--- leptonica-1.68/src/pngio.c	2011-02-01 06:41:12.000000000 +0100
++++ leptonica-1.68.new/src/pngio.c	2012-01-24 22:41:11.000000000 +0100
+@@ -107,6 +107,10 @@
+ /* --------------------------------------------*/
+ 
+ #include "png.h"
++#ifdef HAVE_LIBZ
++#include "zlib.h"
++#endif
++
+ 
+ /* ----------------Set defaults for read/write options ----------------- */
+     /* strip 16 bpp --> 8 bpp on reading png; default is for stripping */
